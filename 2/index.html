@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практична робота 2</title>
+</head>
+<body>
+    <script>
+        // варіант 23
+        // 1.
+        /*
+        let k = 1, y = 1, x = 1;
+
+        let part_1 = Math.pow(k + 1, -4.3);
+
+        let part_2_1 = Math.atan(k * x) - 0.006 * x;
+        let part_2_2 = Math.sqrt(Math.abs(x) + 3.41) + Math.pow(Math.pow(Math.sin(y), 4) * x, 1/3);
+
+        let part_2 = part_2_1 / part_2_2;
+
+        let p = part_1 * y + part_2;
+
+        console.log(p);
+        */
+
+        // 2.
+        let a = -4;
+        let x = -1;
+        
+        let middle = Math.abs(x) - Math.abs(a);
+
+        let result = Math.abs(x - a) <= middle && middle < Math.abs(x) * a;
+
+        console.log(result);
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+.settings {
+    margin: 15px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 5px;
+    display: inline-flex;
+    border-radius: 5px;
+    flex-direction: column;
+    vertical-align: top;
+    gap: 5px;
+}
+
+.settings input, .settings label {
+    vertical-align: middle;
+}
+
+html {
+    background: #388;
+}
+
+* {
+    font-family: "Zalando Sans", sans-serif;
+}
+
+.square {
+    width: 15px;
+    height: 15px;
+    margin: 10px;
+    border: solid 2px rgba(0, 0, 0, 0);
+    border-radius: 3px;
+}
+
+.square:hover {
+    border: solid 2px #777;
+}
+
+.color-window {
+    margin: 15px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 5px;
+    border-radius: 5px;
+    display: inline-flex;
+    flex-direction: column;
+    vertical-align: top;
+}
+
+.color-window span {
+    display: flex;
+}
+
+input:focus {
+    outline: none;
+}

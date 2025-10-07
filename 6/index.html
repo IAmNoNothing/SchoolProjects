@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="settings">
+        <span>
+            <input type="range" id="input-range-red" min="0" max="255">
+            <label for="input-range-red" style="color: red">Red</label>
+        </span>
+        <span>
+            <input type="range" id="input-range-green" min="0" max="255">
+            <label for="input-range-green" style="color: green">Green</label>
+        </span>
+        <span>
+            <input type="range" id="input-range-blue" min="0" max="255">
+            <label for="input-range-blue" style="color: blue">Blue</label>
+        </span>
+        <div style="justify-content: space-between; display: flex;">
+            <input type="number" min="0" max="255" placeholder="R" id="R">
+            <input type="number" min="0" max="255" placeholder="G" id="G">
+            <input type="number" min="0" max="255" placeholder="B" id="B">
+        </div>
+        <span style="display: flex;">
+            <input type="text" placeholder="Hex" id="hex" style="flex: 1;">
+        </span>
+    </div>
+    <div class="color-window">
+        <span>
+            <div class="square" style="background: #f00;" onclick="onColorClick(this, 0)"></div>
+            <div class="square" style="background: #0f0;" onclick="onColorClick(this, 1)"></div>
+            <div class="square" style="background: #00f;" onclick="onColorClick(this, 2)"></div>
+            <div class="square" style="background: #fff;" onclick="onColorClick(this, 3)"></div>
+            <div class="square" style="background: #000;" onclick="onColorClick(this, 4)"></div>
+        </span>
+        <span>
+            <div class="square" style="background: #ff0;" onclick="onColorClick(this, 5)"></div>
+            <div class="square" style="background: #f0f;" onclick="onColorClick(this, 6)"></div>
+            <div class="square" style="background: #0ff;" onclick="onColorClick(this, 7)"></div>
+            <div class="square" style="background: #8f0;" onclick="onColorClick(this, 8)"></div>
+            <div class="square" style="background: #f08;" onclick="onColorClick(this, 9)"></div>
+        </span>
+        <span>
+            <div class="square" style="background: #f80;" onclick="onColorClick(this, 10)"></div>
+            <div class="square" style="background: #08f;" onclick="onColorClick(this, 11)"></div>
+            <div class="square" style="background: #80f;" onclick="onColorClick(this, 12)"></div>
+            <div class="square" style="background: #f88;" onclick="onColorClick(this, 13)"></div>
+            <div class="square" style="background: #88f;" onclick="onColorClick(this, 14)" id="default-chosen-color"></div>
+        </span>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
