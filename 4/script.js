@@ -2,14 +2,14 @@
 
 // 1
 
-{function y(x) {
+function y(x) {
     return (Math.log(Math.abs(x + 1)) + 5) / (2 * x + 3);
 }
 
 // A
 // 0.2 <= x <= 0.9, dx = 0.15
 
-let tableBodyA = document.getElementById("A");
+{let tableBodyA = document.getElementById("A");
 let tableBodyB = document.getElementById("B")
 
 const xStart = 0.2;
@@ -20,12 +20,12 @@ console.log("A:")
 for (let x = xStart; x <= xEnd; x += dx_A) {
     console.log(`x = ${x.toFixed(4)} y = ${y(x).toFixed(4)}`);
     tableBodyA.innerHTML += `<tr><td>${x.toFixed(4)}</td><td>${y(x).toFixed(4)}</td></tr>`;
-}
+}}
 
 // B
 // x >= 5, dx = 0.2, n = 6
 
-const iterationCount = 6;
+{const iterationCount = 6;
 const dx_B = 0.2;
 let x = 5;
 
@@ -53,7 +53,7 @@ for (let mass = 10; mass <= 40; mass += 3) {
 // z = log10(5x^3 - y)
 // 0 <= x <= 0.5, dx = 0.2, 2.3 <= y <= 5.4, dy = 0.1
 
-function z(x, y) {
+{function z(x, y) {
     /*
     На жаль жодне з заданих значень не задовольняє умову існування логарифму:
     (5 * Math.pow(x, 3) - y) завжди буде <= 0, при цих значеннях
@@ -81,8 +81,4 @@ for (let x = xStart; x <= xEnd; x += dx) {
         row += `<td>${z(x, y)}</td>`
     }
     tableBody3.innerHTML += row + "</tr>";
-}
-
-for (initalization; condition; postiteration) {
-    body
-}
+}}
