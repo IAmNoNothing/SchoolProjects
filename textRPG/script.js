@@ -116,7 +116,7 @@ function dobrinyaName() {
     if (gameVars.knowsDobrinya) {
         return "Добриня";
     }
-    return "...";
+    return "Невідомо";
 }
 
 function genericNext(id) {
