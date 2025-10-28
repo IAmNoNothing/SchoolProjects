@@ -190,7 +190,7 @@ const dialogues = {
                 "value": "Так, я дивився ДжоДжо... А що?"
             },
             {
-                "nexxt": "sleeping-3-3",
+                "next": "sleeping-3-3",
                 "value": "Ні, з чого ти взяв?"
             }
         ]
