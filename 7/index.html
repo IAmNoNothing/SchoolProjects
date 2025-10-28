@@ -81,16 +81,17 @@
     };
 
     function sortBy(field) { 
+        // змінити напрямок сортування
         sortStates[field] = !sortStates[field];
         const ascending = sortStates[field];
 
-        const sorted = products.slice().sort((a, b) => {
+        // відсортувати за потрібним полем
+        products.sort((a, b) => {
             const result = a[field] < b[field] ? -1 : a[field] > b[field] ? 1 : 0;
             return ascending ? result : -result;
         });
 
-        updateTable(sorted);
-
+        updateTable(products);
         console.log(`sorted by ${field} in ${ascending ? 'ascending' : 'descending'} order`);
     }
 
