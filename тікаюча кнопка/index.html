@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #target {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transition: left 0.15s ease, top 0.15s ease;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Впіймай кнопку</p>
+        <button onclick="toggleRandom(this)">Випадково</button>
+        <input type="number" placeholder="Складність" value="1" id="difficulty" min=0>
+    </div>
+
+    <button id="target" onclick="alert('Неймовірно')">Натисни на мене!</button>
+
+    <script>
+        let isRandom = true;
+        let cursorPos = { x: 0, y: 0 };
+
+        function toggleRandom(btn) {
+            isRandom = !isRandom;
+            btn.textContent = isRandom ? 'Випадково' : 'Тікати';
+        }
+
+        window.addEventListener("mousemove", e => {
+            cursorPos.x = e.clientX;
+            cursorPos.y = e.clientY;
+        }); 
+
+        function clamp(n, min, max) {
+            return Math.min(Math.max(n, min), max);
+        }
+
+        setInterval(() => {
+            const target = document.getElementById('target');
+            const rect = target.getBoundingClientRect();
+            const center = {  x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
+            const distance = Math.hypot(center.x - cursorPos.x, center.y - cursorPos.y);
+            const difficulty = Number(document.getElementById("difficulty").value);
+            const margin = 10 * difficulty;
+             
+            if (isRandom) {
+                    if (
+                    rect.left - margin < cursorPos.x && cursorPos.x < rect.right + margin &&
+                    rect.top - margin < cursorPos.y && cursorPos.y < rect.bottom + margin
+                ) {
+                    const x = Math.random() * (window.innerWidth - rect.width);
+                    const y = Math.random() * (window.innerHeight - rect.height);
+
+                    target.style.left = `${x}px`;
+                    target.style.top = `${y}px`;
+                }
+            } else {
+                const dx = (center.x - cursorPos.x) / distance;
+                const dy = (center.y - cursorPos.y) / distance;
+                const speed = (2000 / distance) ** difficulty;
+                if (speed < 0.1) {
+                    return;
+                }
+
+                const x = rect.left + dx * speed;
+                const y = rect.top + dy * speed;
+
+                target.style.left = `${clamp(x, 0, window.innerWidth - rect.width)}px`;
+                target.style.top  = `${clamp(y, 0, window.innerHeight - rect.height)}px`;
+            }
+        }, 33);
+    </script>
+</body>
+</html>
