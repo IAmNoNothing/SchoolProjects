@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="main-container">
+        <div id="upper-section">
+            <div id="weather-desc-container">
+                <img src="#" alt="#" id="weather-icon">
+                <p id="weather-temperature" style="white-space: nowrap;"></p>
+                <div id="rain-humidity-wind-container">
+                    <p id="weather-precipitation" style="white-space: nowrap;"></p>
+                    <p id="weather-humidity"></p>
+                    <p id="weather-wind-speed"></p>
+                </div>
+            </div>
+            <div id="upper-section-third-part">
+                <p id="weather-word">Weather</p>
+                <p id="weekday"></p>
+                <p id="weather-description"></p>
+            </div>
+        </div>
+        <div id="middle-section">
+            <p onclick="chooseGraphMode(this)" id="graph-temperature" class="active">Temperature</p>
+            <p onclick="chooseGraphMode(this)" id="graph-precipitation">Precipitation</p>
+            <p onclick="chooseGraphMode(this)" id="graph-wind">Wind</p>
+        </div>
+        <div>
+            <canvas id="graph" style="width: 100%;" width="1200" height="600"></canvas>
+        </div>
+        <p>маю йти, не встигаю доробити прогноз на тиждень :sob:</p>
+    </div>
+    <script src="script.js"></script>
+    <script src="codes.js"></script>
+</body>
+</html>

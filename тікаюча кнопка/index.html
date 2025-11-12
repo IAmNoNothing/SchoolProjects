@@ -14,12 +14,9 @@
     </style>
 </head>
 <body>
-    <div>
-        <p>Впіймай кнопку</p>
-        <button onclick="toggleRandom(this)">Випадково</button>
-        <input type="number" placeholder="Складність" value="1" id="difficulty" min=0>
-    </div>
-
+    <p>Впіймай кнопку</p>
+    <button onclick="toggleRandom(this)">Випадково</button>
+    <input type="number" placeholder="Складність" value="1" id="difficulty" min=0>
     <button id="target" onclick="alert('Неймовірно')">Натисни на мене!</button>
 
     <script>
@@ -49,7 +46,7 @@
             const margin = 10 * difficulty;
              
             if (isRandom) {
-                    if (
+                if (
                     rect.left - margin < cursorPos.x && cursorPos.x < rect.right + margin &&
                     rect.top - margin < cursorPos.y && cursorPos.y < rect.bottom + margin
                 ) {
@@ -63,6 +60,7 @@
                 const dx = (center.x - cursorPos.x) / distance;
                 const dy = (center.y - cursorPos.y) / distance;
                 const speed = (2000 / distance) ** difficulty;
+                
                 if (speed < 0.1) {
                     return;
                 }
