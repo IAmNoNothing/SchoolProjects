@@ -1,4 +1,4 @@
-const apiUrl = "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m,precipitation_probability";
+const apiUrl = "https://api.open-meteo.com/v1/forecast?latitude=49&longitude=32&hourly=temperature_2m,relative_humidity_2m,precipitation_probability,weather_code,wind_speed_10m";
 const mainContainer = document.getElementById("main-container");
 
 async function fetchWeatherData() {
