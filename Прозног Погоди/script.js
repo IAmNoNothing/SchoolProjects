@@ -34,6 +34,35 @@ function displayWeatherData(data) {
     showNextDays(data);
 }
 
+function showNextDays(data) {
+    const template = document.getElementById("template-prediction");
+    const predictions = document.getElementById("predictions");
+
+    for (let i = 0; i < 7; i++) {
+        const weatherCode = data.hourly.weather_code[i * 24 + 12];
+        const weatherInfo = weatherCodes[weatherCode];
+
+        const weatherIcon = weatherInfo.day.image;
+        const weatherDesc = weatherInfo.day.description;
+
+        const temperatureSlice = data.hourly.temperature_2m.slice(i * 24, (i + 1) * 24);
+        const temperatureDay = Math.max(...temperatureSlice);
+        const temperatureNight = Math.min(...temperatureSlice);
+
+        const clone = template.content.cloneNode(true);
+
+        const icon = clone.querySelector("img");
+        icon.src = weatherIcon;
+        icon.alt = weatherDesc;
+
+        clone.querySelector(".short-weekday").textContent = new Date(data.hourly.time[i * 24 + 12]).toLocaleDateString(undefined, { weekday: "short" });
+        clone.querySelector(".prediction-temperature-day").textContent = temperatureDay;
+        clone.querySelector(".prediction-temperature-night").textContent = temperatureNight;
+
+        predictions.appendChild(clone);
+    }
+}
+
 function drawGraph(weatherData) {
     let data = null;
     let valueType = "";

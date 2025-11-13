@@ -60,10 +60,6 @@
                 const dx = (center.x - cursorPos.x) / distance;
                 const dy = (center.y - cursorPos.y) / distance;
                 const speed = (2000 / distance) ** difficulty;
-                
-                if (speed < 0.1) {
-                    return;
-                }
 
                 const x = rect.left + dx * speed;
                 const y = rect.top + dy * speed;

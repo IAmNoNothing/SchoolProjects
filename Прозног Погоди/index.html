@@ -32,8 +32,23 @@
         <div>
             <canvas id="graph" style="width: 100%;" width="1200" height="600"></canvas>
         </div>
-        <p>маю йти, не встигаю доробити прогноз на тиждень :sob:</p>
+        <div id="predictions">
+            
+        </div>
     </div>
+
+    <template id="template-prediction">
+        <div class="prediction">
+            <p class="short-weekday"></p>
+            <img class="prediction-icon" src="" alt="">
+            <div style="display: flex; justify-content: space-around;">
+                <p class="prediction-temperature-day"></p>
+                <p>|</p>
+                <p class="prediction-temperature-night"></p>
+            </div>
+        </div>
+    </template>
+
     <script src="script.js"></script>
     <script src="codes.js"></script>
 </body>

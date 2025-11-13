@@ -45,3 +45,12 @@
 #middle-section p.active {
     transform: scale(1.2);
 }
+
+#predictions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.short-weekday {
+    text-align: center;
+}
