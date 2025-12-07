@@ -1,0 +1,58 @@
+#main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    justify-content: start;
+}
+
+.card .input-container {
+    background-color: #999;
+    padding: 8px;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card .input-container input {
+    width: 100%;
+    height: 30px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.card .input-container img {
+    width: 30px;
+    height: 30px;
+}
+
+.card .textarea-container textarea {
+    width: 100%;
+    height: 250px;
+    box-sizing: border-box;
+    resize: none;
+    outline: none;
+}
+
+.card .textarea-container {
+    background-color: #aaa;
+    padding: 8px;
+    border-radius: 0 0 5px 5px;
+}
+
+#add-card-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#add-card-button img {
+    width: 100%;
+    height: 250px;
+    box-sizing: border-box;
+    scale: 0.5;
+    transition: ease-out 0.1s;
+}
+
+#add-card-button img:hover {
+    scale: 0.65;
+}

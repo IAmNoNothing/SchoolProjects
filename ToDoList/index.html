@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <template id="card-template">
+        <div class="card">
+            <div class="input-container">
+                <input type="text" id="name" placeholder="Назва">
+                <img src="close.png" alt="close" onclick="this.parentElement.parentElement.remove()">
+            </div>
+            <div class="textarea-container"><textarea name="description" id="description" placeholder="Опис"></textarea></div>
+        </div>
+    </template>
+    <div id="main">
+        <div id="add-card-button"><img src="plus-circle-outline-svgrepo-com.svg" alt="plus-circle-outline-svgrepo-com.svg"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
