@@ -10,10 +10,10 @@
     <template id="card-template">
         <div class="card">
             <div class="input-container">
-                <input type="text" id="name" placeholder="Назва">
-                <img src="close.png" alt="close" onclick="this.parentElement.parentElement.remove()">
+                <input type="text" class="name" placeholder="Назва" onchange="save()">
+                <img src="close.png" alt="close" onclick="onCardRemoved(this)">
             </div>
-            <div class="textarea-container"><textarea name="description" id="description" placeholder="Опис"></textarea></div>
+            <div class="textarea-container"><textarea name="description" class="description" placeholder="Опис" onchange="save()"></textarea></div>
         </div>
     </template>
     <div id="main">
